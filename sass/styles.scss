@@ -1,0 +1,276 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 1em;
+    font-family: 'Hanken Grotesk', sans-serif;;
+    font-weight: 500;
+}
+
+:root {
+    --result: hsl(241, 81%, 54%);
+    --blue: hsl(252, 100%, 67%);
+    --circle: rgba(78, 33, 202, 0.623);
+    --circle2: hsla(241, 47%, 66%, 0);
+    --red: hsla(0, 100%, 67%, 0.055);
+    --orange:  hsla(39, 100%, 56%, 0.116);
+    --green: hsla(166, 100%, 37%, 0.103);
+    --c-blue: hsla(234, 85%, 45%, 0.103);
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    background-color: hsl(0, 0%, 100%);
+
+    @media (min-width: 700px) {
+        align-items: center;
+    }
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    text-align: center;
+
+    @media (min-width: 700px) {
+        flex-direction: row;
+        width: 30em;
+        height: 22em;
+        max-height: 30em;
+        border-radius: 1em;
+        box-shadow: 0.8em 0.8em 0.8em hsl(0, 6%, 91%);
+    }
+
+    &__result {
+       display: flex;
+       flex-direction: column;
+       background:linear-gradient(180deg, hsla(251, 96%, 56%, 0.822), var(--result)) ;
+       width: 100%;
+       height: 20em;
+       align-items: center;
+       border-bottom-left-radius: 2em;
+       border-bottom-right-radius: 2em;
+
+        h2 {
+            display: block;
+            text-align: center;
+            margin-top: 2em;
+            font-size: 1em;
+            color: hsl(0, 0%, 100%);
+        }
+        .your {
+            color: hsla(222, 100%, 96%, 0.664);
+        }
+        .score {
+            display: flex;
+            flex-direction: column;
+            width: 7.5em;
+            padding: 0.5em;
+            border-radius: 50%;
+            background: linear-gradient(180deg, hsla(253, 73%, 25%, 0.568), var(--circle2) );
+            margin-top: 1.2em;
+
+            span {
+                color:hsla(222, 100%, 96%, 0.555);
+                margin-bottom: 10px;
+                font-size: 0.9em;
+                font-family: 'Hanken Grotesk', sans-serif;
+            }
+
+            .top {
+                font-size: 3em;
+                font-family: 'Hanken Grotesk', sans-serif;
+                font-weight: 800;
+                margin-top: 10px;
+                color: hsl(0, 0%, 100%);
+            }
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin: 0 20px 0 20px;
+
+            h2 {
+                margin-bottom: 10px;
+                margin-top: 15px;
+                font-size: 1.2em;
+                font-family: 'Hanken Grotesk', sans-serif;
+                font-weight: 700;
+                letter-spacing: 1px;
+            }
+
+            p {
+                display: block;
+                text-align: center;
+                line-height: 20px;
+                margin: 0 20px 0 20px;
+                font-size: 1em;
+                color: hsl(241, 100%, 89%);
+            }
+        }
+
+        @media (min-width: 700px) {
+            height: 100%;
+            border-radius: 1em;
+
+            
+            h2 {
+                
+                font-size: 0.8em;
+            }
+            .score {
+                width: 8em;
+                padding: 1.2em;
+                margin-top: 1.2em;
+    
+                .top {
+                    font-size: 2.5em;
+                }
+            }
+            .main {
+                margin: 0 10px 0 10px;
+    
+                h2 {
+                    margin-top: 2em;
+                    margin-bottom: 1em;
+                    font-size: 1em;
+                }
+    
+                p {
+                    display: block;
+                    text-align: center;
+                    line-height: 20px;
+                    margin: 0 15px 0 15px;
+                    font-size: 0.9em;
+                    color: hsl(241, 100%, 89%);
+                }
+            }
+        }
+
+    }
+
+    &__summary {
+        display: flex;
+        flex-direction: column;
+        background-color: hsl(0, 0%, 100%);
+        width: 100%;
+        align-items: center;
+        font-family: 'Hanken Grotesk', sans-serif;
+
+        @media (min-width: 700px) {
+            height: 100%;
+            border-radius: 1em;
+
+            span {
+                font-size: 0.9em;
+            }
+        }
+
+        h2 {
+            display: flex;
+            align-self: flex-start;
+            margin-top: 1em;
+            margin-left: 1em;
+            font-size: 1em;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 800;
+        }
+
+        .block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1.5em;
+            width: 100%;
+
+            .org {
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+                width: 80%;
+                padding: 1em;
+                margin-top: 1.5em;
+                border-radius: 10px;
+
+                @media (min-width: 700px) {
+                    padding: 0.8em;
+                    margin-top: 1em;
+                }
+                }
+            }
+
+            .red {
+                color: hsl(0, 100%, 67%);
+                background-color: var(--red);
+            }
+
+            .yellow {
+                color: hsl(39, 100%, 56%);
+                background-color: var(--orange);
+            }
+
+            .green {
+                color: hsl(166, 100%, 37%);
+                background-color: var(--green);
+            }
+
+            .blue {
+                color: hsl(234, 85%, 45%);
+                background-color: var(--c-blue);
+            }
+
+            .icon {
+                display: flex;
+                align-items: center;
+                
+                svg {
+                    margin-right: 0.8em;
+                }
+            }
+
+            .first {
+                color: hsl(224, 30%, 27%);
+                font-weight: 700;
+
+                .less {
+                    color: hsla(224, 30%, 27%, 0.39);
+                }
+            }
+        }
+        .btn {
+            width: 80%;
+            margin-top: 2em;
+            background-color:hsl(224, 30%, 27%);
+            outline: none;
+            color: hsl(0, 0%, 100%);
+            padding: 1em;
+            border-radius: 20em;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 500;
+
+            @media (min-width: 700px) {
+                margin-top: 1em;
+                padding: 0.6em;
+                cursor: pointer;
+    
+            }
+        }
+        .btn:hover {
+            background-color: var(--result);
+            transition: all 0.4s ease-in-out;
+        }
+
+
+
+        }
+    
+
+
